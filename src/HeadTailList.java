@@ -37,7 +37,7 @@ public class HeadTailList implements ListInterface {
 		}
 		else
 		{
-			lastNode = newNode;			
+			lastNode.next = newNode;			
 		}
 		
 		lastNode = newNode;
@@ -130,7 +130,9 @@ public class HeadTailList implements ListInterface {
 			desiredNode.data = newEntry;
 		}
 		else
+		{
 			isSuccessful = false;
+		}
 		return isSuccessful;
 	} // end replace
 	
