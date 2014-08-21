@@ -7,25 +7,8 @@ public class HeadTailList implements ListInterface {
 	
 	public HeadTailList() 
 	{
-		firstNode = null;
-		lastNode = null;
-		length = 0;
+		clear();
 	} // end default constructor
-	
-	public final void clear()
-	{
-		firstNode = null;
-		lastNode = null;
-		length = 0;
-	} // end clear
-	
-	/**
-	 * // Length of zero is empty, therefore the list starts at 1 (one).
-	 */
-	public boolean isEmpty()
-	{
-		return length == 0;
-	}
 	
 	public boolean add(Object newEntry)
 	{
@@ -120,6 +103,13 @@ public class HeadTailList implements ListInterface {
 		return result;
 	} // end remove
 	
+	public final void clear()
+	{
+		firstNode = null;
+		lastNode = null;
+		length = 0;
+	} // end clear
+	
 	public boolean replace(int givenPosition, Object newEntry)
 	{
 		boolean isSuccessful = true;
@@ -161,6 +151,19 @@ public class HeadTailList implements ListInterface {
 		return found;
 	} // end contains
 	
+	public int getLength()
+	{
+		return length;
+	} // end getLength
+	
+	/**
+	 * // Length of zero is empty, therefore the list starts at 1 (one).
+	 */
+	public boolean isEmpty()
+	{
+		return length == 0;
+	}
+	
 	/**
 	 * This should always return false.  The only time a list whose implementation
 	 * is linked could appear full is when they system can not provide enough 
@@ -173,10 +176,6 @@ public class HeadTailList implements ListInterface {
 		return false;
 	} // end isFull
 	
-	public int getLength()
-	{
-		return length;
-	} // end getLength
 	
 	public void display()
 	{

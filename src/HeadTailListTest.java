@@ -9,18 +9,7 @@ public class HeadTailListTest {
 	public void testHeadTailList() {
 		HeadTailList list = new HeadTailList();
 		assertEquals(0, list.getLength());
-	}
-
-	@Test
-	public void testClear() {
-		HeadTailList list = new HeadTailList();
-		assertEquals(0, list.getLength());
-	}
-
-	@Test
-	public void testIsEmpty() {
-		HeadTailList list = new HeadTailList();
-		assertEquals(0, list.getLength());
+		assertEquals(null, list.getEntry(1));
 	}
 
 	@Test
@@ -62,6 +51,13 @@ public class HeadTailListTest {
 		list.remove(4);
 		// test that strawberry was removed and blueberry became entry #4
 		assertEquals("blueberry", list.getEntry(4));
+	}
+	
+	@Test
+	public void testClear() {
+		HeadTailList list = new HeadTailList();
+		assertEquals(0, list.getLength());
+		assertEquals(null, list.getEntry(1));
 	}
 
 	@Test
@@ -106,13 +102,6 @@ public class HeadTailListTest {
 	}
 
 	@Test
-	public void testIsFull() {
-		HeadTailList list = new HeadTailList();
-		boolean ans = false;
-		assertEquals(ans, list.isFull());
-	}
-
-	@Test
 	public void testGetLength() {
 		HeadTailList list = new HeadTailList();
 		// fill with values
@@ -123,6 +112,19 @@ public class HeadTailListTest {
 		assertEquals(4, list.getLength());
 		list.add("melon");
 		assertEquals(5, list.getLength());
+	}
+	
+	@Test
+	public void testIsEmpty() {
+		HeadTailList list = new HeadTailList();
+		assertEquals(0, list.getLength());
+	}
+	
+	@Test
+	public void testIsFull() {
+		HeadTailList list = new HeadTailList();
+		boolean ans = false;
+		assertEquals(ans, list.isFull());
 	}
 
 }
